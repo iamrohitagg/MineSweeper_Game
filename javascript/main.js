@@ -49,6 +49,7 @@ function startGame(){
                         let bomb = bombIndexes[j];
                         let bombNode = document.getElementById(bomb);
                         bombNode.style.background = "red";
+                        bombNode.style.position = "relative";
                         bombNode.style.top = "-4px";
                         bombNode.innerHTML = "💣";
                     }
