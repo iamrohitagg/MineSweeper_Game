@@ -21,13 +21,13 @@ function startGame(){
     // making the grid to be displayed
     for(let i  = 0;i < 9;i++){
         let row = document.createElement("div");
-        row.style.height = "20px";
+        row.style.height = "50px";
         for(let x = 0;x < 9; x++){
             let currentIndex = i*9 + x;
             
             let cell = document.createElement("div");
-            cell.style.height = "20px";
-            cell.style.width = "20px";
+            cell.style.height = "50px";
+            cell.style.width = "50px";
             cell.innerHTML = "";
             cell.style.display = "inline-block";
             cell.style.border = "1px solid black";
@@ -50,7 +50,7 @@ function startGame(){
                         let bombNode = document.getElementById(bomb);
                         bombNode.style.background = "red";
                         bombNode.style.position = "relative";
-                        bombNode.style.top = "-4px";
+                        bombNode.style.top = "-37px";
                         bombNode.innerHTML = "💣";
                     }
                     newGame.style.display = "block";
