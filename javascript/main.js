@@ -10,7 +10,7 @@ function startGame(){
     let congo = document.getElementById("congo");
     
     //the array used for positioning of the bombs in grid
-    let bombIndexes = Array.from({length:10},()=>Math.floor(Math.random()*82));
+    let bombIndexes = Array.from({length:10},()=>Math.floor(Math.random()*81));
     // let bombIndexes = generateRandom([]);
     console.log("her",bombIndexes);
     
