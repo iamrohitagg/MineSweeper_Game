@@ -7,7 +7,7 @@ function startGame(){
     let congo = document.getElementById("congo");
     let bombIndexes = Array.from({length:10},()=>Math.floor(Math.random()*81));
     // let bombIndexes = generateRandom([]);
-    console.log("her",bombIndexes);
+    // console.log("her",bombIndexes);
     let visited = [];
     let gameOver  = false;
     for(let i  = 0;i < 9;i++){
@@ -40,7 +40,7 @@ function startGame(){
                         let bombNode = document.getElementById(bomb);
                         bombNode.style.background = "red";
                         bombNode.style.position = "relative";
-                        bombNode.style.top = "-37px";
+                        bombNode.style.top = "-34px";
                         bombNode.innerHTML = "💣";
                     }
                     newGame.style.display = "block";
