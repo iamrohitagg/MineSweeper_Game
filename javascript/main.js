@@ -26,11 +26,39 @@ function startGame(){
             cell.addEventListener("click",()=>{
                 if(!bombIndexes.includes(currentIndex) && (!gameOver)){
                     if(!visited.includes(currentIndex)){
+                        const col = 9
+                        const row = 9
+                        let bombs = 0;
+                        if (currentIndex % col !== 1 && bombIndexes.includes(currentIndex - col - 1)) {
+                            bombs++;
+                        }
+                        if (currentIndex > col && bombIndexes.includes(currentIndex - col)) {
+                            bombs++;
+                        }
+                        if (currentIndex % col !== 0 && bombIndexes.includes(currentIndex - col + 1)) {
+                            bombs++;
+                        }
+                        
+                        if (currentIndex % col !== 1 && bombIndexes.includes(currentIndex - 1)) {
+                            bombs++;
+                        }
+                        if (currentIndex % col !== 0 && bombIndexes.includes(currentIndex + 1)) {
+                            bombs++;
+                        }
+                        if (currentIndex % col !== 1 && bombIndexes.includes(currentIndex + col - 1)) {
+                            bombs++;
+                        }
+                        if (currentIndex <= col * (row - 1) && bombIndexes.includes(currentIndex + col)) {
+                            bombs++;
+                        }
+                        if (currentIndex % col !== 0 && bombIndexes.includes(currentIndex + col + 1)) {
+                            bombs++;
+                        }
                         visited.push(currentIndex);
                         score++;
                         points.innerHTML = score;
                         cell.style.background = "green";
-                        
+                        cell.innerHTML = bombs;
                     }       
                 }
                 else{
