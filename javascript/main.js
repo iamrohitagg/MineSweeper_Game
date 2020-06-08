@@ -21,7 +21,7 @@ function startGame(){
             cell.innerHTML = "";
             cell.style.display = "inline-block";
             cell.style.border = "1px solid black";
-            cell.style.background = "#C4D6E1";
+            cell.style.background = " rgb(224, 224, 139)";
             cell.setAttribute("id",currentIndex);
             cell.addEventListener("click",()=>{
                 if(!bombIndexes.includes(currentIndex) && (!gameOver)){
@@ -59,6 +59,8 @@ function startGame(){
                         points.innerHTML = score;
                         cell.style.background = "green";
                         cell.innerHTML = bombs;
+                        cell.style.position = "relative";
+                        cell.style.top  = " -35px";
                     }       
                 }
                 else{
