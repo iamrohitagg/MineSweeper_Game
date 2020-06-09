@@ -13,8 +13,10 @@ h1{
     font-weight: 100;
     font-family: cursive;
     text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    margin-top:  5px;
 }
 #root{
+    position: relative;
     display: block;
     margin-top: 50px;
 }
@@ -22,4 +24,9 @@ h1{
     position: absolute;
     margin-top: 60px;
     display: none;
+}
+#start{
+    display: none;
+    margin-left: 400px;
+    margin-right: 400px;
 }

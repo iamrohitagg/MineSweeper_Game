@@ -29,6 +29,16 @@ function startGame(){
             cell.style.border = "1px solid black";
             cell.style.background = " rgb(224, 224, 139)";
             cell.setAttribute("id",currentIndex);
+            cell.addEventListener("contextmenu", function(){
+                if(!gameOver){
+                    cell.style.textAlign = "center";
+                    cell.innerHTML = "❗";
+                    cell.style.position = "relative";
+                    cell.style.top  = " -35px";
+                    return false;
+                    
+                }
+            }, false);
             cell.addEventListener("click",()=>{
                 if(!bombIndexes.includes(currentIndex) && (!gameOver)){
                     if(!visited.includes(currentIndex)){
@@ -101,6 +111,7 @@ function startGame(){
     //applying styles to the start div
     newGame.style.fontSize = "40px";
     newGame.style.fontFamily = "cursive";
-    newGame.style.border = " 3px solid black"
+    newGame.style.border = " 3px solid black";
+    
 }   
 startGame();
