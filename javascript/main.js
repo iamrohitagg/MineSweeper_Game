@@ -1,10 +1,16 @@
 'use strict';
 function startGame(){
     let score = 0;
+    //grid for the minesweeper
     let root = document.getElementById("root");
+    //points section
     let points = document.getElementById("points");
+    // butoon for new game
     let newGame = document.getElementById("start");
     let congo = document.getElementById("congo");
+    
+    //array for the bombs to be in grid
+    //math.floor creates random value in range [0,1)
     let bombIndexes = Array.from({length:10},()=>Math.floor(Math.random()*81));
     // let bombIndexes = generateRandom([]);
     // console.log("her",bombIndexes);
@@ -57,14 +63,16 @@ function startGame(){
                         visited.push(currentIndex);
                         score++;
                         points.innerHTML = score;
+                        points.style.fontSize = "40px";
                         cell.style.background = "green";
                         cell.innerHTML = bombs;
                         cell.style.position = "relative";
                         cell.style.top  = " -35px";
+                        // cell.style.box-shadow = "10px 10px 10px rgba(0, 0, 0, 0.5)";
                     }       
                 }
                 else{
-                    for(let j = 0;j<10;j++){
+                    for(let j = 0;j < 10; j++){
                         gameOver = true;
                         let bomb = bombIndexes[j];
                         let bombNode = document.getElementById(bomb);
@@ -80,11 +88,19 @@ function startGame(){
         }
         root.appendChild(row);
     }
+
+    //displaying the congo div if score is equal to 72
     if(score == 72){
         congo.style.display = "block";
+        
     }
     newGame.addEventListener("click",()=>{
         location.reload();
     })
+    
+    //applying styles to the start div
+    newGame.style.fontSize = "40px";
+    newGame.style.fontFamily = "cursive";
+    newGame.style.border = " 3px solid black"
 }   
 startGame();
