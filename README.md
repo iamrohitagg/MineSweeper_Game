@@ -14,4 +14,7 @@ If the user has scored 72 points it means he has clicked all the safe cells. The
 <br>
 #### Users first! 🙏
 When users right click on a cell they see something like this
+<br>
+![alt text](https://github.com/psycho376/MineSweeper_Game/blob/master/css/icon.jpeg)
+<br>
 This way users can remember that they concluded there's a bomb in that cell and should not click it. If a user left-clicks on this flagged cell, normal flow should continue.
