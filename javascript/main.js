@@ -1,10 +1,13 @@
 'use strict';
 function startGame(){
     let score = 0;
+    
     //grid for the minesweeper
     let root = document.getElementById("root");
+    
     //points section
     let points = document.getElementById("points");
+    
     // butoon for new game
     let newGame = document.getElementById("start");
     let congo = document.getElementById("congo");
@@ -12,10 +15,12 @@ function startGame(){
     //array for the bombs to be in grid
     //math.floor creates random value in range [0,1)
     let bombIndexes = Array.from({length:10},()=>Math.floor(Math.random()*81));
+    
     // let bombIndexes = generateRandom([]);
     // console.log("her",bombIndexes);
     let visited = [];
     let gameOver  = false;
+    
     for(let i  = 0;i < 9;i++){
         let row = document.createElement("div");
         row.style.height = "50px";
@@ -27,7 +32,7 @@ function startGame(){
             cell.innerHTML = "";
             cell.style.display = "inline-block";
             cell.style.border = "1px solid black";
-            cell.style.background = " rgb(224, 224, 139)";
+            cell.style.background = " rgba(119,136,153,0.4)";
             cell.setAttribute("id",currentIndex);
             cell.addEventListener("contextmenu", function(){
                 if(!gameOver){
