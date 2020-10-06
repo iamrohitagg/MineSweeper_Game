@@ -19,7 +19,6 @@ function startGame() {
   );
 
   // let bombIndexes = generateRandom([]);
-  // console.log("her",bombIndexes);
   let visited = [];
   let gameOver = false;
 
